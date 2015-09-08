@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 $(document).ready(function(){
 
 var guessCount = 0;
@@ -25,6 +26,10 @@ $("#guessButton").click(function(e) {
 
 		number =Math.floor((Math.random() * 100) + 1);
 	};
+=======
+
+$(document).ready(function(){
+>>>>>>> 209c990e47738728b5a7e870f496e9ac69125bf2
 	
 	/*--- Display information modal box ---*/
   	$(".what").click(function(){
@@ -37,11 +42,14 @@ $("#guessButton").click(function(e) {
   		$(".overlay").fadeOut(1000);
   	});
 
+<<<<<<< HEAD
   	$(".new").on('click', function() {
 		window.location.reload(true);
   	
 	});
 
+=======
+>>>>>>> 209c990e47738728b5a7e870f496e9ac69125bf2
 });
 
 
