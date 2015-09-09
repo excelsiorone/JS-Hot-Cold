@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 $(document).ready(function(){
 
 var guessCount = 0;
@@ -15,21 +14,47 @@ $("#guessButton").click(function(e) {
 	var guess = $("#userGuess").val();
 	var guessOne = ('<li>' +guess+ '</li>');
 	$("#guessList").append(guessOne)
-	incrementCounter();
 	$("#userGuess").val("");
 	$("#userGuess").focus();
-	//checkGuess(guess);
+	incrementCounter();
+	checkGuess(guess);
 
 });
 
-	function newNumber() {
+	function checkGuess(guess) {
+		var guessDifference;
+		var guessInt = parseInt(guess);
 
-		number =Math.floor((Math.random() * 100) + 1);
+		if (guess == number) {
+			$("#feedback").text("Correct !");
+		} else if (guessInt > number) {
+			guessDifference = guessInt - number;
+		} else if (guessInt < number) {
+			guessDifference = number - guessInt;
+		}
+
+		if (guessDifference >=1 && guessDifference <= 10) {
+			$("#feedback").text("Smoking Hot !!");
+		} else if (guessDifference < 10 && guessDifference <= 20) {
+			$("#feedback").text("Hot !");
+		}
+			else if (guessDifference < 20 && guessDifference <= 30) {
+				$("feedback").text("Warm");
+			}
+			else if (guessDifference < 30 && guessDifference <= 50) {
+				$("#feedback").text("Frigid");
+			}
+			else if (guessDifference > 50) {
+				$("#feedback").text("You're are in the Tundra");
+			}
 	};
-=======
 
-$(document).ready(function(){
->>>>>>> 209c990e47738728b5a7e870f496e9ac69125bf2
+	function newNumber() {
+	number =Math.floor((Math.random() * 100) + 1);
+	console.log(number);
+	};
+
+	newNumber()
 	
 	/*--- Display information modal box ---*/
   	$(".what").click(function(){
@@ -42,14 +67,11 @@ $(document).ready(function(){
   		$(".overlay").fadeOut(1000);
   	});
 
-<<<<<<< HEAD
   	$(".new").on('click', function() {
 		window.location.reload(true);
   	
 	});
 
-=======
->>>>>>> 209c990e47738728b5a7e870f496e9ac69125bf2
 });
 
 
